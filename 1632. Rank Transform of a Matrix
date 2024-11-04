@@ -1,0 +1,14 @@
+class Solution {
+  List<int> arrayRankTransform(List<int> arr) {
+    var sortedUnique = arr.toSet().toList()..sort();
+    var rankMap = <int, int>{};
+    for (int i = 0; i < sortedUnique.length; i++) {
+      rankMap[sortedUnique[i]] = i + 1;
+    }
+    List<int> result = [];
+    for (var value in arr) {
+      result.add(rankMap[value]!); 
+    }
+ return result;
+  }
+}
