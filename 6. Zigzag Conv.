@@ -1,0 +1,22 @@
+class Solution {
+  String convert(String s, int numRows) {
+    if (numRows == 1) return s;
+    
+    List<StringBuffer> rows = List<StringBuffer>.generate(numRows, (_) => StringBuffer());
+    int j = 0, d = 1;
+    for (int i = 0; i < s.length; i++) {
+      rows[j].write(s[i]);
+      if (j == numRows - 1) {
+        d = -1;
+      } else if (j == 0) {
+        d = 1;
+      }
+      j += d;
+    }
+StringBuffer res = StringBuffer();
+    for (int i = 0; i < numRows; i++) {
+      res.write(rows[i]);
+    }
+ return res.toString();
+  }
+}
