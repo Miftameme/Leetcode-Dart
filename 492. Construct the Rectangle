@@ -1,0 +1,12 @@
+class Solution {
+  List<int> constructRectangle(int area) {
+    int width = area;
+    for (int i = 1; i * i <= area; i++) {
+      if (area % i == 0) {
+        width = i; 
+      }
+    }
+    int length = area ~/ width; 
+    return [length, width];
+  }
+}
