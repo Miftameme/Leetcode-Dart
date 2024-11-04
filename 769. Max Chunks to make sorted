@@ -1,0 +1,17 @@
+class Solution {
+  int maxChunksToSorted(List<int> arr) {
+    int count = 0;
+    int insum = 0; 
+    int arrsum = 0; 
+    for (int x = 0; x < arr.length; x++) {
+      insum += x; 
+      arrsum += arr[x]; 
+      if (insum == arrsum) {
+        count++; 
+        insum = 0; 
+        arrsum = 0; 
+      }
+    }
+     return count;
+  }
+}
