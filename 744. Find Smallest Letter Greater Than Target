@@ -1,0 +1,10 @@
+class Solution {
+  String nextGreatestLetter(List<String> letters, String target) {
+    for (String letter in letters) {
+      if (letter.codeUnitAt(0) > target.codeUnitAt(0)) {
+        return letter;
+      }
+    }
+    return letters[0];
+  }
+}
